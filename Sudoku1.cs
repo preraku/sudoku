@@ -355,6 +355,8 @@ namespace Sudoku1
             char readFromUser = 'P';
             for (int iteration = 0; iteration < sI.Count; iteration++)
             {
+                if (readFromUser == 'S') 
+                    break;
                 System.Console.WriteLine($"\niteration: {iteration + 1}; solution is shown within * *");
                 for (int i = 0; i < 9; i++)
                 {
@@ -382,8 +384,8 @@ namespace Sudoku1
                     }
                     System.Console.WriteLine();
                 }
-                if (readFromUser != 'S') {
-                    System.Console.Write("\nPress \"S\" to print all steps at once or any other key to continue:");
+                if (readFromUser != 'A') {
+                    System.Console.Write("\nPress \"A\" to print all steps at once, \"S\" to skip to the solution, or any other key to continue:");
                     readFromUser = Char.ToUpper((char)Console.Read());
                 }
 
